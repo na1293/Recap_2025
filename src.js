@@ -1,16 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
-        // Target date: đổi nếu cần (hiện là 25 Jan 2026 00:00)
+    // --- 1. COUNTDOWN & CELEBRATION LOGIC (Không đổi) ---
     const TARGET = new Date("2025-12-31T23:59:59");
 
-    // References
+    // References cho Countdown
     const moEl = document.getElementById('mo');
-    const dEl  = document.getElementById('d');
-    const hEl  = document.getElementById('h');
+    const dEl = document.getElementById('d');
+    const hEl = document.getElementById('h');
     const miEl = document.getElementById('mi');
-    const sEl  = document.getElementById('s');
+    const sEl = document.getElementById('s');
     const afterBox = document.getElementById('afterBox');
-    const overlay = document.getElementById('overlay');
+    // Lưu ý: overlayCelebrate là biến cho Pop-up khi đếm ngược kết thúc (overlay)
+    const overlayCelebrate = document.getElementById('overlay'); 
     const recapBtn = document.getElementById('recapBtn');
+
+    // References cho Guide Pop-up
+    const guidePopUp = document.getElementById('guidePopUp'); // Container Overlay chính
+    const myLink = document.getElementById('myLink');         // Link mở Pop-up
+    const hideButton = document.getElementById('hide');       // Nút "Đã hiểu"
+    const startLink = document.querySelector('.countdown-title.hide-popup'); // Link "Nhấn vào đây..."
+    
+    // Local Storage Key
+    const GUIDE_KEY = 'hasSeenGuide_2026_v1';
+    const HAS_SEEN_GUIDE = localStorage.getItem(GUIDE_KEY);
 
     // helper: pad 2 digits
     const pad = (n) => String(n).padStart(2,'0');
@@ -18,39 +29,22 @@ document.addEventListener("DOMContentLoaded", function() {
     // compute months properly + remaining time
     function computeParts(now, target){
         if (now >= target) return { months:0, days:0, hours:0, minutes:0, seconds:0, finished:true };
-
-        // total month difference (year*12 + month)
         let months = (target.getFullYear() - now.getFullYear())*12 + (target.getMonth() - now.getMonth());
-
-        // If target day-of-month is less than current day-of-month, we haven't completed the current month yet
-        if (target.getDate() < now.getDate()) {
-            months -= 1;
-        }
-
-        // Build intermediate date by adding months to 'now'
+        if (target.getDate() < now.getDate()) { months -= 1; }
         const interim = new Date(now.getTime());
         interim.setMonth(interim.getMonth() + months);
-
-        // If interim advanced past target (rare because of month-length quirks), adjust back
         while (interim > target) {
             months -= 1;
             interim.setMonth(interim.getMonth() - 1);
         }
-
-        // remainder ms after removing whole months
         let remainderMs = target.getTime() - interim.getTime();
-
         const days = Math.floor(remainderMs / (1000 * 60 * 60 * 24));
         remainderMs -= days * (1000 * 60 * 60 * 24);
-
         const hours = Math.floor(remainderMs / (1000 * 60 * 60));
         remainderMs -= hours * (1000 * 60 * 60);
-
         const minutes = Math.floor(remainderMs / (1000 * 60));
         remainderMs -= minutes * (1000 * 60);
-
         const seconds = Math.floor(remainderMs / 1000);
-
         return { months, days, hours, minutes, seconds, finished:false };
     }
 
@@ -61,10 +55,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const p = computeParts(now, TARGET);
 
         moEl.textContent = p.months;
-        dEl.textContent  = p.days;
-        hEl.textContent  = pad(p.hours);
+        dEl.textContent  = p.days;
+        hEl.textContent  = pad(p.hours);
         miEl.textContent = pad(p.minutes);
-        sEl.textContent  = pad(p.seconds);
+        sEl.textContent  = pad(p.seconds);
 
         if (p.finished) {
             clearInterval(timerId);
@@ -72,43 +66,83 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // celebration: overlay + show afterBox after delay
+    // celebration
     function celebrate(){
-        // create a simple celebrate element
-        overlay.setAttribute('aria-hidden','false');
-        overlay.innerHTML = `
+        overlayCelebrate.setAttribute('aria-hidden','false');
+        overlayCelebrate.innerHTML = `
             <div class="celebrate" role="region" aria-live="polite">
                 <h2>🎆 Chúc Mừng Năm Mới 2026! 🎇</h2>
             </div>
         `;
-
-        // show afterBox after 3s (overlay remains)
         setTimeout(() => {
             afterBox.style.display = 'flex';
         }, 3000);
-
-        // auto-hide overlay after 8s
         setTimeout(() => {
-            overlay.innerHTML = '';
-            overlay.setAttribute('aria-hidden','true');
+            overlayCelebrate.innerHTML = '';
+            overlayCelebrate.setAttribute('aria-hidden','true');
         }, 8000);
     }
 
-    // button behaviour: reload page to restart countdown or show recap — here reload
     recapBtn.addEventListener('click', () => {
         location.reload();
     });
 
-    // start
+    // Start countdown
     tick();
     timerId = setInterval(tick, 1000);
 
-    const myLink = document.getElementById('myLink');
 
-    myLink.addEventListener('click', function(event) {
-    // Ngăn hành động mặc định của thẻ <a>
-    event.preventDefault();
+    // --- 2. POP-UP & LOCAL STORAGE LOGIC (KEY FIX) ---
+    
+    // Hàm ĐÓNG Pop-up: Ghi Local Storage và Ẩn
+    function hideGuidePopUp(event) {
+        if (event) event.preventDefault();
+        
+        if (guidePopUp) {
+            // Ẩn Pop-up (Dùng display:none vì Pop-up không nằm trong luồng Flex của body)
+            guidePopUp.style.display = 'none';
+            
+            // Ghi Local Storage để Pop-up không hiện lại lần sau
+            localStorage.setItem(GUIDE_KEY, 'true');
 
-    alert("Thành công rồi nha!");
-    });
+            // Cuộn về phần kết quả (UX mượt)
+            const resultEl = document.getElementById('result');
+            if (resultEl) {
+                resultEl.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
+
+    // 2.1. Logic Hiển thị Lần Đầu (Local Storage)
+    if (guidePopUp) {
+        if (HAS_SEEN_GUIDE === 'true') {
+            // Đã xem, ẩn đi
+            guidePopUp.style.display = 'none';
+        } else {
+            // Lần đầu, hiển thị Pop-up
+            // Dùng 'flex' để căn giữa Pop-up trong Overlay (theo CSS Pop-up căn giữa tuyệt đối)
+            guidePopUp.style.display = 'flex';
+        }
+    }
+    
+    // 2.2. Event Listener để Mở Pop-up (Từ link "Làm thế nào...")
+    if (myLink && guidePopUp) {
+        myLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            // Mở Pop-up
+            guidePopUp.style.display = 'flex'; 
+        });
+    }
+
+    // 2.3. Event Listener để ĐÓNG Pop-up
+
+    // Nút "Đã hiểu"
+    if (hideButton) {
+        hideButton.addEventListener('click', hideGuidePopUp);
+    }
+    
+    // Link "Nhấn vào đây để bắt đầu"
+    if (startLink) {
+        startLink.addEventListener('click', hideGuidePopUp);
+    }
 });

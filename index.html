@@ -8,7 +8,6 @@
     <script src="src.js"></script>
     <script src="read.js"></script> 
     <script src="send.js"></script>
-    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -47,14 +46,88 @@
         <div class="result" id="result">
             <p>Chưa có dữ liệu. Hãy chọn file <strong>YouTube</strong>.</p>
             <br>
-            Làm thế nào để tôi xem recap?<a href="README.md" id="myLink"> Nhấn vào đây.</a>
+            Làm thế nào để tôi xem recap?<a href="#how-to-rv-recap" id="myLink"> Nhấn vào đây.</a>
         </div>
         <hr>
         <h2>Chúng tôi sẽ cập nhật xu hướng năm 2025 vào tháng 12, hãy đón chờ!</h2>
         <p>Chưa có dữ liệu.</p>
     </div>
 
-    <!-- overlay container, filled when celebration triggers -->
-    <div id="overlay" class="overlay" aria-hidden="true"></div>
-</body>
+    <div id="guidePopUp" class="overlay"> 
+        <div class="pop-up" id="help">
+            <h1>Hướng dẫn xem Recap</h1>
+
+            <p>
+                Chúng ta sẽ cùng đếm ngược đến <strong class="highlight">23:59:59, ngày 31/12/2025</strong>.
+            </p>
+
+            <p>
+                Bạn có thể xem <strong class="highlight">recap YouTube cá nhân hóa</strong> bằng cách <strong class="highlight">tải lên file dữ liệu</strong>.
+            </p>
+
+            <p>
+                Phía dưới là <strong class="highlight">hướng dẫn chi tiết</strong>,
+                nhưng bạn vẫn có thể <a href="#quick-guide">yêu cầu hướng dẫn nhanh</a> mà không cần đọc toàn bộ trang này.
+            </p>
+
+            <hr>
+
+            <h2 id="guide-detail">Hướng dẫn chi tiết</h2>
+            <p style="font-style: italic;" id="quick-guide"></p>
+
+            <h3>Bước 1:</h3>
+            <p>
+                Truy cập trang dữ liệu Google Takeout:
+                <a href="https://takeout.google.com/" target="_blank" rel="noopener noreferrer">Google Takeout tại đây.</a>
+            </p>
+
+            <h3>Bước 2:</h3>
+            <p>
+                Tại phần <code>Create a new export</code>, chọn <strong><code>Deselect all (Bỏ chọn tất cả)</code></strong> để bỏ chọn những danh mục không cần thiết (Tránh chờ lâu).
+            </p>
+
+            <div class="note">
+                <h4>Giải thích chi tiết bước 2:</h4>
+                <p>Mỗi khi xuất dữ liệu, Google cần chuẩn bị dữ liệu cho bạn. Càng nhiều dữ liệu càng lâu. Bởi lẽ đó, chúng ta chỉ chọn dữ liệu YouTube để rút gọn dữ liệu.</p>
+            </div>
+
+            <h3>Bước 3:</h3>
+            <p>
+                Tìm mục <code>YouTube and YouTube Music</code> thường là ở cuối trang.
+            </p>
+            
+            <h4>Hỗ trợ tìm nhanh hơn ở mục 3 (Mục "YouTube and YouTube Music")</h4>
+            <ul>
+                <li><a href="https://takeout.google.com/u/1/?pageId=none#:~:text=Watch+and+search+history" target="_blank" rel="noopener noreferrer">Đi đến đó với tiếng Anh</a></li>
+                <li><a href="https://takeout.google.com/u/1/?pageId=none#:~:text=Nhật%20ký%20xem%20và%20tìm%20kiếm" target="_blank" rel="noopener noreferrer">Đi đến đó với tiếng Việt</a></li>
+            </ul>
+            
+            <h3>Bước 4:</h3>
+            <ul>
+                <li>Chọn <code>All YouTube data included</code> hoặc <code>Bao gồm tất cả dữ liệu trên YouTube</code></li>
+                <li>Tiếp tục chọn <code>Deselect all</code> để loại bỏ các mục thừa</li>
+                <li>Tìm và chọn <strong><code>history</code></strong> hay <strong><code>Lịch sử</code></strong>. Đảm bảo rằng chỉ có mục đó được chọn.</li>
+                <li>Nhấn <code>ok</code> và tìm <code>Multiple formats</code></li>
+                <li>Tại đây, tìm mục <code>history</code> (Thường là ở cuối)</li>
+                <li>Chuyển định dạng <strong><code>HTML</code></strong> thành <strong><code>JSON</code></strong></li>
+            </ul>
+
+            <h3>Bước 5:</h3>
+            <ul>
+                <li>Chọn <code>Next Step</code> hay <code>Bước tiếp theo</code></li>
+                <li>Tại mục <code>Choose file type, frequency & destination</code>, ở <code>Frequency</code> chọn <strong><code>Export once - 1 export</code></strong></li>
+                <li>Cuối cùng, chọn <code>Create export</code> hay <code>Tạo tệp xuất</code> để xuất dữ liệu.</li>
+            </ul>
+
+            <h3>Bước 6:</h3>
+            <p>
+                Google sẽ báo <strong><code>Google đang tạo bản sao của dữ liệu trong YouTube và YouTube Music</code></strong>
+            </p>
+            <p>
+                Bạn hãy ở lại và chờ khoảng 3 phút đến 5 phút sau đó <strong class="highlight">tải lại trang</strong>.
+            </p>
+            <button class="button" id="hide">Đã hiểu</button>
+        </div>
+    </div>
+    </body>
 </html>

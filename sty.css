@@ -238,6 +238,93 @@ input[type="file"]:hover{ transform: translateY(-2px); }
 }
 .hidden { display: block; } /* để nó vẫn chiếm chỗ khi ẩn dần */
 
+.overlay{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(0, 0, 0, 0.45); /* Nền đen đậm hơn một chút */
+  backdrop-filter: blur(5px); /* Tăng độ mờ nhẹ */
+  pointer-events:all; 
+  z-index: 40;
+  opacity: 1;
+  transition: opacity 0.4s ease, visibility 0.4s;
+  display: none;
+  right: 0;
+}
+
+/* .pop-up (Cửa sổ nội dung modal) - TRUNG TÂM CỦA SỰ ĐẸP TRAI */
+.pop-up{
+  position: relative;
+  
+  max-width: 95%; /* Nên dùng giá trị cố định hoặc max-width nhỏ hơn 80% để đẹp hơn */
+  max-height: 95%; /* Điều chỉnh lại thành 90vh để chừa chỗ cho màn hình nhỏ */
+
+  overflow-y: auto; 
+  
+  background: rgba(255, 255, 255, 0.95);
+
+  padding: 24px 32px;
+  border-radius: 20px;
+  box-shadow: 0 16px 30px rgba(0,0,0,0.1), 0 0 0 1px rgba(166,58,0,0.08); 
+  border: none;
+  z-index: 50;
+  text-align: left;
+  
+  /* Hiệu ứng trượt vào */
+  transform: scale(0.95);
+  animation: popIn 0.35s cubic-bezier(.2,.9,.3,1) forwards;
+}
+
+/* Thêm animation cho Pop In */
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Căn giữa tiêu đề H1 và nút Bắt đầu */
+.pop-up h1 { 
+    text-align: center; 
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: var(--accent-2); /* Màu cam nổi bật */
+}
+
+/* Chỉnh lại link "Bắt đầu" cho đẹp mắt hơn */
+.pop-up .countdown-title {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.pop-up .countdown-title:hover {
+    color: var(--accent-2);
+}
+
+/* Chỉnh lại list các bước hướng dẫn */
+.pop-up ul {
+    list-style: none; /* Bỏ dấu chấm mặc định */
+    padding-left: 0;
+}
+
+.pop-up ul li {
+    margin-bottom: 10px;
+}
+
+.pop-up h3 {
+    color: var(--accent-2);
+    margin-top: 25px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid rgba(255, 123, 58, 0.2);
+    padding-bottom: 5px;
+}
+
 /* small animations */
 @keyframes pulse{ 0%{ transform: scale(1) } 50%{ transform: scale(1.05) } 100%{ transform: scale(1) } }
 @keyframes fadeIn{ from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none} }

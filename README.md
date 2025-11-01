@@ -25,7 +25,7 @@ Bởi lẽ đó, chúng ta chỉ chọn dữ liệu YouTube để rút gọn d�
 Tìm mục `YouTube and YouTube Music` thường là ở cuối trang.
 ### Hỗ trợ tìm nhanh hơn ở mục 3 (Mục "YouTube and YouTube Music")
 - [Đi đến đó với tiếng Anh](https://takeout.google.com/u/1/?pageId=none#:~:text=Watch+and+search+history)
-- [Đi đến đó với tiếng Việt](https://takeout.google.com/u/1/?pageId=none#:~:text=Nhật+ký+xem+và+tìm+kiếm)
+- [Đi đến đó với tiếng Việt](https://takeout.google.com/u/1/?pageId=none#:~:text=Nhật%20ký%20xem%20và%20tìm%20kiếm)
 
 ### Bước 4:
 - Chọn `All YouTube data included` hoặc `Bao gồm tất cả dữ liệu trên YouTube`
