@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
         // Target date: đổi nếu cần (hiện là 25 Jan 2026 00:00)
-    const TARGET = new Date("2020-12-31T23:59:59");
+    const TARGET = new Date("2025-12-31T23:59:59");
 
     // References
     const moEl = document.getElementById('mo');
