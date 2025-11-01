@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Đếm Ngược 2026</title>
+    <link rel="stylesheet" href="sty.css" />
+    <script src="src.js"></script>
+    <script src="read.js"></script> 
+    <script src="send.js"></script>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="wrap" aria-live="polite">
+        <h1>Tết sẽ đến sau</h1>
+
+        <div class="countdown" role="timer" aria-atomic="true">
+            <div class="time-box">
+                <h2 id="mo">0</h2>
+                <div class="label">Tháng</div>
+            </div>
+            <div class="time-box">
+                <h2 id="d">0</h2>
+                <div class="label">Ngày</div>
+            </div>
+            <div class="time-box">
+                <h2 id="h">00</h2>
+                <div class="label">Giờ</div>
+            </div>
+            <div class="time-box">
+                <h2 id="mi">00</h2>
+                <div class="label">Phút</div>
+            </div>
+            <div class="time-box">
+                <h2 id="s">00</h2>
+                <div class="label">Giây</div>
+            </div>
+        </div>
+
+        <div class="box" id="afterBox">
+            <div class="new-year">Năm mới vui vẻ. Hãy cùng đón xem bất ngờ nhé!</div>
+            <button class="button" id="recapBtn">Xem lại recap</button>
+        </div>
+        <input type="file" id="fileInput" accept="YouTube">
+        <div class="result" id="result">
+            <p>Chưa có dữ liệu. Hãy chọn file <strong>YouTube</strong>.</p>
+        </div>
+        <hr>
+        <h2>Chúng tôi sẽ cập nhật xu hướng năm 2025 vào tháng 12, hãy đón chờ!</h2>
+        <p>Chưa có dữ liệu.</p>
+    </div>
+
+    <!-- overlay container, filled when celebration triggers -->
+    <div id="overlay" class="overlay" aria-hidden="true"></div>
+</body>
+</html>
