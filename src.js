@@ -102,4 +102,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // start
     tick();
     timerId = setInterval(tick, 1000);
+
+    const myLink = document.getElementById('myLink');
+
+    myLink.addEventListener('click', function(event) {
+    // Ngăn hành động mặc định của thẻ <a>
+    event.preventDefault();
+
+    alert("Thành công rồi nha!");
+    });
 });
