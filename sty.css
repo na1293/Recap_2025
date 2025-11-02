@@ -277,6 +277,11 @@ input[type="file"]:hover{ transform: translateY(-2px); }
   animation: popIn 0.35s cubic-bezier(.2,.9,.3,1) forwards;
 }
 
+.can-trai h3 {
+  /* Căn trái chữ */
+  text-align: left;
+}
+
 /* Thêm animation cho Pop In */
 @keyframes popIn {
     from {

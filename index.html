@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="wrap" aria-live="polite">
-        <h1>Tết sẽ đến sau</h1>
+        <h1>Năm 2026 sẽ đến sau</h1>
 
         <div class="countdown" role="timer" aria-atomic="true">
             <div class="time-box">
@@ -51,12 +51,17 @@
         <hr>
         <h2>Chúng tôi sẽ cập nhật xu hướng năm 2025 vào tháng 12, hãy đón chờ!</h2>
         <p>Chưa có dữ liệu.</p>
+        
     </div>
 
     <div id="guidePopUp" class="overlay"> 
         <div class="pop-up" id="help">
             <h1>Hướng dẫn xem Recap</h1>
-
+            <strong>Lưu ý: File của Google có thể chưa đầy đủ hoàn toàn, bạn nên coi đó là tư liệu tham khảo.</strong>
+            <hr>
+            <h2>Dữ liệu của bạn vẫn an toàn.</h2>
+            <p>Đúng vậy, toàn bộ dữ liệu cá nhân của bạn sẽ được xử lý nội bộ. Chúng tôi không thu thập hay gửi bất cứ dữ liệu nào của bạn lên máy chủ khác.</p>
+            <hr>
             <p>
                 Chúng ta sẽ cùng đếm ngược đến <strong class="highlight">23:59:59, ngày 31/12/2025</strong>.
             </p>
@@ -83,7 +88,7 @@
 
             <h3>Bước 2:</h3>
             <p>
-                Tại phần <code>Create a new export</code>, chọn <strong><code>Deselect all (Bỏ chọn tất cả)</code></strong> để bỏ chọn những danh mục không cần thiết (Tránh chờ lâu).
+                Tại phần <strong>Create a new export</strong>, chọn <strong><strong>Deselect all (Bỏ chọn tất cả)</strong></strong> để bỏ chọn những danh mục không cần thiết (Tránh chờ lâu).
             </p>
 
             <div class="note">
@@ -93,7 +98,7 @@
 
             <h3>Bước 3:</h3>
             <p>
-                Tìm mục <code>YouTube and YouTube Music</code> thường là ở cuối trang.
+                Tìm mục <strong>YouTube and YouTube Music</strong> thường là ở cuối trang.
             </p>
             
             <h4>Hỗ trợ tìm nhanh hơn ở mục 3 (Mục "YouTube and YouTube Music")</h4>
@@ -104,30 +109,50 @@
             
             <h3>Bước 4:</h3>
             <ul>
-                <li>Chọn <code>All YouTube data included</code> hoặc <code>Bao gồm tất cả dữ liệu trên YouTube</code></li>
-                <li>Tiếp tục chọn <code>Deselect all</code> để loại bỏ các mục thừa</li>
-                <li>Tìm và chọn <strong><code>history</code></strong> hay <strong><code>Lịch sử</code></strong>. Đảm bảo rằng chỉ có mục đó được chọn.</li>
-                <li>Nhấn <code>ok</code> và tìm <code>Multiple formats</code></li>
-                <li>Tại đây, tìm mục <code>history</code> (Thường là ở cuối)</li>
-                <li>Chuyển định dạng <strong><code>HTML</code></strong> thành <strong><code>JSON</code></strong></li>
+                <li>Chọn <strong>All YouTube data included</strong> hoặc <strong>Bao gồm tất cả dữ liệu trên YouTube</strong></li>
+                <li>Tiếp tục chọn <strong>Deselect all</strong> để loại bỏ các mục thừa</li>
+                <li>Tìm và chọn <strong><strong>history</strong></strong> hay <strong><strong>Lịch sử</strong></strong>. Đảm bảo rằng chỉ có mục đó được chọn.</li>
+                <li>Nhấn <strong>ok</strong> và tìm <strong>Multiple formats</strong></li>
+                <li>Tại đây, tìm mục <strong>history</strong> (Thường là ở cuối)</li>
+                <li>Chuyển định dạng <strong><strong>HTML</strong></strong> thành <strong><strong>JSON</strong></strong></li>
             </ul>
 
             <h3>Bước 5:</h3>
             <ul>
-                <li>Chọn <code>Next Step</code> hay <code>Bước tiếp theo</code></li>
-                <li>Tại mục <code>Choose file type, frequency & destination</code>, ở <code>Frequency</code> chọn <strong><code>Export once - 1 export</code></strong></li>
-                <li>Cuối cùng, chọn <code>Create export</code> hay <code>Tạo tệp xuất</code> để xuất dữ liệu.</li>
+                <li>Chọn <strong>Next Step</strong> hay <strong>Bước tiếp theo</strong></li>
+                <li>Tại mục <strong>Choose file type, frequency & destination</strong>, ở <strong>Frequency</strong> chọn <strong><strong>Export once - 1 export</strong></strong></li>
+                <li>Cuối cùng, chọn <strong>Create export</strong> hay <strong>Tạo tệp xuất</strong> để xuất dữ liệu.</li>
             </ul>
 
             <h3>Bước 6:</h3>
             <p>
-                Google sẽ báo <strong><code>Google đang tạo bản sao của dữ liệu trong YouTube và YouTube Music</code></strong>
+                Google sẽ báo <strong><strong>Google đang tạo bản sao của dữ liệu trong YouTube và YouTube Music</strong></strong>
             </p>
             <p>
                 Bạn hãy ở lại và chờ khoảng 3 phút đến 5 phút sau đó <strong class="highlight">tải lại trang</strong>.
             </p>
-            <button class="button" id="hide">Đã hiểu</button>
+
+            <h3> Bước 7: (Nếu bạn là nhà phát triển có thể bỏ qua bước này)</h3>
+            <ul>
+                <li>Bạn cần tải xuống và tìm tệp có tên là <strong>history.json</strong></li>
+                <li>Chọn mục <strong>upload file</strong>, sau đó chọn <strong>ảnh và video (Trên Android)</strong></li>
+                <li>Tìm mục <strong>takeout-2025...001.zip</strong>, hủy giải nén file</li>
+                <li>Chọn tệp <strong>Takeout</strong>, chọn mục <strong>YouTube and YouTube Music</strong>, tìm và chọn <strong>history</strong>, cuối cùng, tìm chọn file có đuôi <strong>.json</strong></li>
+            </ul>
+            <hr>
+            <p>Chúc bạn xem recap vui vẻ!</p>
+            <strong>Đọc thêm về các điều khoản <a href="use.html">tại đây</a></strong>
+            <br>
+            <button class="button" id="hide" onclick="clickbtn()">Đã hiểu & Đồng ý</button>
         </div>
     </div>
     </body>
+
+    <script>
+        function clickbtn() {
+            const GUIDE_KEY = 'hasSeenGuide_2026_v1';
+            const HAS_SEEN_GUIDE = localStorage.getItem(GUIDE_KEY);
+            localStorage.setItem(GUIDE_KEY, 'true');
+        }
+    </script>
 </html>

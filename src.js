@@ -91,20 +91,12 @@ document.addEventListener("DOMContentLoaded", function() {
     tick();
     timerId = setInterval(tick, 1000);
 
-
-    // --- 2. POP-UP & LOCAL STORAGE LOGIC (KEY FIX) ---
-    
-    // Hàm ĐÓNG Pop-up: Ghi Local Storage và Ẩn
+    hideGuidePopUp()
     function hideGuidePopUp(event) {
         if (event) event.preventDefault();
-        
         if (guidePopUp) {
             // Ẩn Pop-up (Dùng display:none vì Pop-up không nằm trong luồng Flex của body)
             guidePopUp.style.display = 'none';
-            
-            // Ghi Local Storage để Pop-up không hiện lại lần sau
-            localStorage.setItem(GUIDE_KEY, 'true');
-
             // Cuộn về phần kết quả (UX mượt)
             const resultEl = document.getElementById('result');
             if (resultEl) {
@@ -112,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     }
+
 
     // 2.1. Logic Hiển thị Lần Đầu (Local Storage)
     if (guidePopUp) {
@@ -123,26 +116,26 @@ document.addEventListener("DOMContentLoaded", function() {
             // Dùng 'flex' để căn giữa Pop-up trong Overlay (theo CSS Pop-up căn giữa tuyệt đối)
             guidePopUp.style.display = 'flex';
         }
-    }
-    
-    // 2.2. Event Listener để Mở Pop-up (Từ link "Làm thế nào...")
-    if (myLink && guidePopUp) {
-        myLink.addEventListener('click', function(event) {
-            event.preventDefault();
-            // Mở Pop-up
-            guidePopUp.style.display = 'flex'; 
-        });
+            // 2.2. Event Listener để Mở Pop-up (Từ link "Làm thế nào...")
+        if (myLink && guidePopUp) {
+            myLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Mở Pop-up
+                guidePopUp.style.display = 'flex'; 
+            });
+        }
+
+        // 2.3. Event Listener để ĐÓNG Pop-up
+
+        // Nút "Đã hiểu"
+        if (hideButton) {
+            hideButton.addEventListener('click', hideGuidePopUp);
+        }
+        
+        // Link "Nhấn vào đây để bắt đầu"
+        if (startLink) {
+            startLink.addEventListener('click', hideGuidePopUp);
+        }
     }
 
-    // 2.3. Event Listener để ĐÓNG Pop-up
-
-    // Nút "Đã hiểu"
-    if (hideButton) {
-        hideButton.addEventListener('click', hideGuidePopUp);
-    }
-    
-    // Link "Nhấn vào đây để bắt đầu"
-    if (startLink) {
-        startLink.addEventListener('click', hideGuidePopUp);
-    }
 });

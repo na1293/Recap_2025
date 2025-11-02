@@ -43,3 +43,9 @@ Tìm mục `YouTube and YouTube Music` thường là ở cuối trang.
 ### Bước 6:
 - Google sẽ báo `Google đang tạo bản sao của dữ liệu trong YouTube và YouTube Music`
 - Bạn hãy ở lại và chờ khoảng 3 phút đến 5 phút sau đó tải lại trang.
+
+### Bước 7: (Nếu bạn là nhà phát triển có thể bỏ qua bước này)
+- Bạn cần tải xuống và tìm tệp có tên là `history.json`
+- Chọn mục `upload file`, sau đó chọn `ảnh và video`
+- Tìm mục `takeout-2025...001.zip`, hủy giải nén file
+- Chọn tệp `Takeout`, chọn mục `YouTube and YouTube Music`, tìm và chọn `history`, cuối cùng, tìm chọn file có đuôi `.json`
