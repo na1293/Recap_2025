@@ -148,7 +148,7 @@ input[type="file"]:hover{ transform: translateY(-2px); }
 .result{
   margin-top:12px;
   width:100%;
-  max-height: 44vh;
+  max-height: 40vh;
   overflow:auto;
   background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.94));
   border-radius:12px;
@@ -210,12 +210,6 @@ input[type="file"]:hover{ transform: translateY(-2px); }
   animation: fadeIn .6s ease both;
   gap:12px;
 }
-.celebrate h2{
-  font-size:2rem;
-  color:#b22222;
-  text-shadow: 0 0 16px rgba(255,160,160,0.9);
-  animation: pulse 1.4s ease-in-out infinite;
-}
 
 .recap-step {
   opacity: 0;
@@ -224,7 +218,7 @@ input[type="file"]:hover{ transform: translateY(-2px); }
   margin-bottom: 18px;
 }
 .recap-step.show {
-  opacity: 1;
+  opacity: 5;
   transform: none;
 }
 .recap-step h2 {
@@ -281,6 +275,7 @@ input[type="file"]:hover{ transform: translateY(-2px); }
   /* Căn trái chữ */
   text-align: left;
 }
+
 
 /* Thêm animation cho Pop In */
 @keyframes popIn {

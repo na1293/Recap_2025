@@ -9,7 +9,7 @@
     <script src="read.js"></script> 
     <script src="send.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="txt.css">
 </head>
 <body>
     <div class="wrap" aria-live="polite">
@@ -42,6 +42,7 @@
             <div class="new-year">Năm mới vui vẻ. Hãy cùng đón xem bất ngờ nhé!</div>
             <button class="button" id="recapBtn">Xem lại recap</button>
         </div>
+        <hr>
         <input type="file" id="fileInput" accept="YouTube">
         <div class="result" id="result">
             <p>Chưa có dữ liệu. Hãy chọn file <strong>YouTube</strong>.</p>
@@ -155,4 +156,19 @@
             localStorage.setItem(GUIDE_KEY, 'true');
         }
     </script>
+
+    <style>
+        .box-rc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;          /* center like recap */
+        justify-content: flex-start;
+        gap: var(--gap);
+        padding: 28px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1120px;
+        transition: transform .28s ease, opacity .28s ease;
+        }
+    </style>
 </html>
