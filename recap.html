@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recap 2025 - Tech Meta</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="backend.js"></script>
+</head>
+<body>
+
+    <div class="viewport">
+        <div class="stage active" id="stage1" data-type="manual">
+            <h1>Recap 2025</h1>
+            <p>Khám phá xu hướng trong năm qua</p>
+            <button onclick="nextStage()">Bắt đầu ngay ✨</button>
+        </div>
+
+        <div class="stage" id="stage2" data-type="auto" data-time="5000">
+            <h1>KHÁM PHÁ XU HƯỚNG ÂM NHẠC TRONG NĂM QUA</h1>
+            <p>Năm qua quả là một năm đầy biến động và đổi mới.</p>
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="stage" id="stage3" data-type="manual">
+            <h1>Cùng đoán xem! Bài hát được nghe nhiều nhất!</h1>
+            <button onclick="nextStage()">Tìm hiểu</button>
+        </div>
+
+        <div class="stage" id="stage4" data-type="auto" data-time="5000">
+            <h1>MV Tràn Bộ Nhớ</h1>
+            <h2>Dương Domic</h2>
+            <p></p>
+            <br>
+            <button onclick="window.open('https://www.youtube.com/watch?v=qRuSS93OEfw', '_blank');">Bắt đầu nghe</button>
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="stage" id="stage5" data-type="auto" data-time="5000">
+            <h1>Phép Màu</h1>
+            <h2>OST Đàn Cá Gỗ</h2>
+            <p></p>
+            <br>
+            <button onclick="window.open('https://youtu.be/jPjQJYKhhk4?si=-DnooD0vLNFoL_NF&t=42', '_blank');">Lắng nghe điệp khúc</button>
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="stage" id="stage6" data-type="auto" data-time="5000">
+            <h1>NỖI ĐAU GIỮA HÒA BÌNH</h1>
+            <h2>Hòa Minzy</h2>
+            <p></p>
+            <br>
+            <button onclick="window.open('https://youtu.be/yHikkFeIHNA?si=YMOI8fJAmhFu8TP-&t=183', '_blank');">Lắng nghe tiếng gọi Hòa Bình</button>
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="stage" id="stage7" data-type="auto" data-time="5000">
+            <h1>Gã Săn Cá</h1>
+            <h2>Quang Hùng MasterD</h2>
+            <p></p>
+            <br>
+            <button onclick="window.open('https://youtu.be/of7WJaaFAGE?si=itQ0nk061YotrsEj&t=39', '_blank');">Phát ngay</button>
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="stage" id="stage8" data-type="auto" data-time="5000">
+            <h1>CHỜ ANH VỀ</h1>
+            <h2>B Ray x AMEE x Masew</h2>
+            <p></p>
+            <br>
+            <button onclick="window.open('https://youtu.be/xzClnybxdbg?si=T46jHFc3SIAPlbSQ&t=120', '_blank');">Phát ngay</button>
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="stage" id="stage9" data-type="auto" data-time="5000">
+            <h1>TÁI SINH</h1>
+            <h2>Tùng Dương</h2>
+            <p></p>
+            <br>
+            <button onclick="window.open('https://youtu.be/Jy6jJGIIUos?si=oUrAVtDyIERIR-rz&t=39', '_blank');">Phát ngay</button>
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="stage" id="stage10" data-type="auto" data-time="5000">
+            <h1>Dù cho tận thế</h1>
+            <h2>ERIK</h2>
+            <p></p>
+            <br>
+            <button onclick="window.open('https://youtu.be/js6JBdLzNn4?si=-ZmaF7dIUua65pTi&t=53', '_blank');">Phát ngay</button>
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="stage" id="stage11" data-type="auto" data-time="5000">
+            <h1>Mất Kết Nối</h1>
+            <h2>Dương Domic</h2>
+            <p></p>
+            <br>
+            <button onclick="window.open('https://youtu.be/lRsaDQtYqAo?si=L3HABaUp4oFVnr-M&t=82', '_blank');">Phát ngay</button>
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="stage" id="stage12" data-type="auto" data-time="5000">
+            <h1>Exit Sign</h1>
+            <h2>HIEUTHUHAI</h2>
+            <p></p>
+            <br>
+            <button onclick="window.open('https://youtu.be/sJt_i0hOugA?si=FGjxRq5kMRVJuEOt&t=22', '_blank');">Phát ngay</button>
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="stage" id="stage13" data-type="manual">
+            <h1>Bạn có đoán được bài hát được nghe nhiều nhất năm không?</h1>
+            <p>Kết quả sẽ làm bạn bất ngờ đó!</p>
+            <button onclick="nextStage()">Xé túi mù!</button>
+        </div>
+
+        <div class="stage" id="stage14" data-type="auto" data-time="5000">
+            <h1>BẮC BLING (BẮC NINH)</h1>
+            <h2>Hòa Minzy</h2>
+            <p></p>
+            <br>
+            <button onclick="window.open('https://youtu.be/CL13X-8o4h0?si=MNHZ6gaxwxPc2POv&t=32', '_blank');">Phát ngay</button>
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="stage" id="stage15" data-type="manual">
+            <h1>Thể loại nhạc được nghe nhiều nhất năm...</h1>
+            <button onclick="nextStage()">Mở khóa</button>
+        </div>
+
+        <div class="stage" id="stage16" data-type="manual">
+            <h1>Indie/Rap và Ballad</h1>
+            <p style="color: #ffff">Năm 2025 chứng kiến âm nhạc Việt sôi động với sự bùng nổ của Nhạc Trực Tuyến (Streaming), Indie/Rap, Ballad, sự nổi lên của thế hệ Gen Z, các sự kiện âm nhạc lớn, và các vấn đề như Bản Quyền và xu hướng kết hợp quảng cáo trong âm nhạc, cho thấy một giai đoạn phát triển mạnh mẽ nhưng cũng đầy thách thức cho thị trường nhạc Việt. </p>
+            <button onclick="nextStage()">Mở khóa</button>
+        </div>
+
+        <div class="stage" id="stage17" data-type="manual">
+            <h1>Đây là cửa cuối cùng!</h1>
+            <button onclick="nextStage()">Đi tiếp</button>
+        </div>
+
+        <div class="stage" id="stage18" data-type="manual">
+            <h1>Năm mới tới rồi!!!</h1>
+            <p style="color: #ffff;">Chúc mừng năm mới! Chúc bạn một năm mới thật nhiều sức khỏe, tinh thần lúc nào cũng on top, học tập – công việc hanh thông, tiền vào như nước, buồn phiền trôi hết theo năm cũ. Mong mọi điều tốt đẹp nhất sẽ tìm tới bạn 🌱</p>
+            <button onclick="window.open('https://www.youtube.com/watch?v=3Uo0JAUWijM', '_blank');">Phát nhạc New Year</button>
+            <br>
+            <button onclick="nextStage()">Tiếp tục</button>
+        </div>
+
+        <div class="stage" id="stage19" data-type="manual">
+            <h1>Năm qua bạn như nào? Hãy cùng chia sẻ mục tiêu năm nay nhé!</h1>
+            <input type="text" placeholder="Mục tiêu của tôi là..." id="goalInput" style="width: 80%; padding: 10px; font-size: 16px;">
+            <br>
+            <button onclick="nextStage()">Ghi nhận</button>
+        </div>
+
+        <div class="stage" id="stage20" data-type="manual">
+            <h1>Hoàn thành Recap!!!</h1>
+            <p>Hãy cùng chia sẻ năm qua của bạn nhé</p>
+            <button onclick="shareGoal()" id="shareBtn">Chia sẻ</button>
+            <br>
+            <button onclick="location.reload()">Làm lại phát nữa 🔁</button>
+        </div>
+    </div>
+
+    <script src="style.js">
+    </script>
+</body>
+</html>

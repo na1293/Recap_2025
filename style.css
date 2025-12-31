@@ -1,0 +1,94 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: #000; /* Nền tối cho sang */
+            color: white;
+            overflow: hidden;
+        }
+
+
+        .stage {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            
+            /* Hiệu ứng ẩn mặc định */
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(1.1) translateY(20px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Container chính */
+        .viewport {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Active: Khi stage đang hiển thị */
+        .stage.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1) translateY(0);
+        }
+
+        /* Exit: Khi stage đã đi qua */
+        .stage.exit {
+            opacity: 0;
+            transform: scale(0.9) translateY(-20px);
+            filter: blur(10px);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 4rem);
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #bdc3c7;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            background: #fff;
+            color: #0f2027;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #00d2ff;
+            color: white;
+        }
+
+        /* Progress Bar cho loại Auto */
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: #00d2ff;
+            width: 0%;
+            transition: width linear;
+        }
